@@ -1,4 +1,4 @@
-from ast import Pass
+import math
 import colorama
 from os import system
 from colorama import Fore, Style, init
@@ -51,7 +51,7 @@ def main():
     if main_input == '1':
         TexttoBinary()
     elif main_input == '2':
-        Pass
+        BinarytoText()
     else:
         pass
 
@@ -64,9 +64,7 @@ def TexttoBinary():
     print()
     
     text = input(Fore.RED + " [TEXT] " + Fore.LIGHTYELLOW_EX)
-    
-    text = text.upper()
-    
+        
     print()
     
     cipher = ''
@@ -90,6 +88,35 @@ def TexttoBinary():
         pass
 
 ################################################## BINARY to TEXT ##################################################
+
+def BinarytoText():
+    system('cls')
+    
+    print()
+    
+    binary = input(Fore.RED + " [BINARY] " + Fore.LIGHTYELLOW_EX)
+        
+    print()
+    
+    binary = binary.split()
+    
+    asciiString = ""
+    
+    for i in binary:
+        num = int(i, 2)
+        asciichar = chr(num)
+        asciiString += asciichar
+      
+    print(Fore.GREEN + " [TEXT] " + Fore.LIGHTCYAN_EX + asciiString)
+    
+    print()
+    
+    print(Fore.WHITE + " Back to Main ? (y/n) ")
+    answer = input(Fore.RED + " >> ")
+    if answer == 'y' or answer == 'Y':
+        main()
+    else:
+        pass
 
 ################################################## BODY ##################################################
 
