@@ -3,7 +3,7 @@ import colorama
 from os import system
 from colorama import Fore, Style, init
 
-MORSE_CODE_DICT = {
+BINARY_CODE_DICT = {
     'A': '1000001',     'N': '1001110',     'a': '1100001',     'n': '1101110',     '0': '110000',
     'B': '1000010',     'O': '1001111',     'b': '1100010',     'o': '1101111',     '1': '110001',
     'C': '1000011',     'P': '1010000',     'c': '1100011',     'p': '1110000',     '2': '110010',
@@ -49,14 +49,46 @@ def main():
     main_input = input(Fore.GREEN + " >> ")
     
     if main_input == '1':
-        pass
+        TexttoBinary()
     elif main_input == '2':
         Pass
     else:
         pass
 
 ################################################## TEXT to BINARY ##################################################
+
+def TexttoBinary():
     
+    system('cls')
+    
+    print()
+    
+    text = input(Fore.RED + " [TEXT] " + Fore.LIGHTYELLOW_EX)
+    
+    text = text.upper()
+    
+    print()
+    
+    cipher = ''
+    
+    for i in text:
+        if i != ' ':
+            cipher += BINARY_CODE_DICT[i] + ' '
+        
+        else:
+            cipher += ' '
+            
+    print(Fore.GREEN + " [BINARY] " + Fore.LIGHTCYAN_EX + cipher)
+    
+    print()
+    
+    print(Fore.WHITE + " Back to Main ? (y/n) ")
+    answer = input(Fore.RED + " >> ")
+    if answer == 'y' or answer == 'Y':
+        main()
+    else:
+        pass
+
 ################################################## BINARY to TEXT ##################################################
 
 ################################################## BODY ##################################################
