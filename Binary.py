@@ -106,6 +106,7 @@ def BinarytoText():
         num = int(i, 2)
         asciichar = chr(num)
         asciiString += asciichar
+        # asciiString = asciiString + (asciichar + " ")
       
     print(Fore.GREEN + " [TEXT] " + Fore.LIGHTCYAN_EX + asciiString)
     
